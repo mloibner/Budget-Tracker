@@ -16,7 +16,7 @@
           
 ## Usage
 An application to give users a fast and easy way to track their money. The application has offline functionality allowing the user to access that information anytime. Functionality includes viewing withdrawals and deposits and a running balance of account.
-You can access it here 
+You can access it here https://gentle-hollows-03886.herokuapp.com/
 
 ### Installation Instructions
 To install the application run the following command:
