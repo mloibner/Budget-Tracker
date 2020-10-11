@@ -15,11 +15,20 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/budget", {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true 
-});
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
+      useNewUrlParser: true,
+      useFindAndModify: false,
+      useUnifiedTopology: true 
+    })
+        .then(connect => console.log('connected to mongodb..'))
+        .catch(e => console.log('could not connect to mongodb', e))
+
+module.exports = {mongoose}
+// mongoose.connect("mongodb://localhost/budget", {
+//   useNewUrlParser: true,
+//   useFindAndModify: false,
+//   useUnifiedTopology: true 
+// });
 
 // routes
 app.use(require("./routes/api.js"));
